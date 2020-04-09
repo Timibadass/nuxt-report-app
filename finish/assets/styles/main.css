@@ -1,0 +1,58 @@
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+  top: 0;
+  position: sticky;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 40%;
+  max-width: 200px;
+  height: 40px;
+}
+
+.logo .NuxtLogo {
+  max-width: 30px;
+  margin-left: 10px;
+  max-height: 40px;
+}
+
+.nav {
+  width: 60%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
+  max-width: 300px;
+}
+
+.nav__link {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  justify-content: center;
+  height: 100%;
+  border: 1px solid #00c58e;
+  cursor: pointer;
+}
+
+.nav__link:active {
+  background-color: #00c58e;
+  border: 1px solid #00c58e;
+  color: #fff;
+  box-shadow: 5px 3px 5px 2px #3f41468c;
+}
