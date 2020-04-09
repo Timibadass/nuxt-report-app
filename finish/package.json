@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-tutorial-app",
+  "version": "1.0.0",
+  "description": "My outstanding Nuxt.js project",
+  "author": "Timibadass",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.9.7",
+    "nuxt": "^2.0.0",
+    "vuex-persist": "^2.2.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1"
+  }
+}
