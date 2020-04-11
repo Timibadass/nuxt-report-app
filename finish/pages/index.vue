@@ -11,7 +11,7 @@ export default {
   name: "landing-page",
   data() {
     return {
-      incidents: ""
+      incidents: []
     };
   },
   components: {
