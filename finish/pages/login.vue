@@ -55,7 +55,6 @@ export default {
         this.$nuxt.$loading.finish();
         let user = res.data.data.user;
         this.$auth.setUser(user);
-        this.$router.push("/");
         this.$notify({
           group: "success",
           title: "Success!",

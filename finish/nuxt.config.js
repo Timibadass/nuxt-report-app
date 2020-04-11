@@ -70,6 +70,11 @@ export default {
    ** Auth module configuration
    */
   auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/my-reports'
+    },
     strategies: {
       local: {
         endpoints: {
