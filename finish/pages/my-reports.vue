@@ -26,7 +26,9 @@ export default {
         let res = await this.$store.dispatch("getMyReports");
         this.incidents = res.data.data;
       } catch (error) {
-        console.error(error);
+        if (error.response.data.data === "User yet to report an incident") {
+          this.incidents = [];
+        }
       }
     },
     async deleteIncident(incident) {
@@ -39,7 +41,7 @@ export default {
         this.$notify({
           group: "success",
           title: "Success",
-          text: "Incident successfully deleted!"
+          text: "Report successfully deleted!"
         });
         this.getMyReports();
       } catch (error) {
