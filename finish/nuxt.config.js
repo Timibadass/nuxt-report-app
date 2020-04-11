@@ -82,6 +82,7 @@ export default {
           user: false,
         },
         tokenType: '',
+        tokenName: 'x-auth',
         autoFetchUser: false
       },
     },

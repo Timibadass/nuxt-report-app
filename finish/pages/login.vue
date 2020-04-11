@@ -1,6 +1,6 @@
 <template>
-  <section class="register">
-    <form class="register__form" @click.prevent="logIn">
+  <section class="login">
+    <form class="login__form" @submit.prevent="logIn">
       <div class="input__container">
         <label for="email" class="input__label">Email Address</label>
         <input type="email" name="email" id="email" class="input__field" v-model="login.email" />
@@ -46,11 +46,13 @@ export default {
     async logIn() {
       let data = this.login;
       this.loading = true;
+      this.$nuxt.$loading.start();
       try {
         let res = await this.$auth.loginWith("local", {
           data
         });
         this.loading = false;
+        this.$nuxt.$loading.finish();
         let user = res.data.data.user;
         this.$auth.setUser(user);
         this.$router.push("/");
@@ -61,6 +63,7 @@ export default {
         });
       } catch (error) {
         this.loading = false;
+        this.$nuxt.$loading.finish();
         this.$notify({
           group: "error",
           title: "Error!",

@@ -40,9 +40,14 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [{
-    src: "~/plugins/vuex-persist",
-    mode: "client"
-  }],
+      src: "~/plugins/vuex-persist",
+      mode: "client"
+    },
+    {
+      src: "~/plugins/font-awesome",
+      mode: "client"
+    }
+  ],
   /*
    ** Nuxt.js dev-modules
    */

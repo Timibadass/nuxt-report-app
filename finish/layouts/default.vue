@@ -1,16 +1,8 @@
 <template>
   <div>
     <client-only>
-      <notifications
-        group="success"
-        classes="vue-notification success"
-        position="top right"
-      />
-      <notifications
-        group="error"
-        classes="vue-notification error"
-        position="top right"
-      />
+      <notifications group="success" classes="vue-notification success" />
+      <notifications group="error" classes="vue-notification error" position="top right" />
     </client-only>
     <Nav />
     <nuxt />

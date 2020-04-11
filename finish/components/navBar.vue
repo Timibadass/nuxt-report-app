@@ -7,25 +7,44 @@
     </div>
 
     <nav class="nav">
-      <div class="nav__link">
-        <nuxt-link to="/">Home</nuxt-link>
+      <div class="nav__user" v-if="auth.loggedIn">
+        <p>{{ auth.user.email }}</p>
+        <button class="nav__link nav__link--long">
+          <nuxt-link to="/report-incident">Report incident</nuxt-link>
+        </button>
+        <button class="nav__link" @click.prevent="logOut">Log out</button>
       </div>
-      <div class="nav__link">
-        <nuxt-link to="/About">About</nuxt-link>
-      </div>
+      <button class="nav__link" v-if="!auth.loggedIn">
+        <nuxt-link to="/login">Login</nuxt-link>
+      </button>
+      <button class="nav__link" v-if="!auth.loggedIn">
+        <nuxt-link to="/register">Register</nuxt-link>
+      </button>
     </nav>
   </header>
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Logo from "@/components/Logo";
 export default {
   name: "nav-bar",
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState(["auth"])
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch("logOut");
+      this.$router.push("/login");
+    }
+  },
   components: {
     Logo
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>
