@@ -21,6 +21,10 @@ export const actions = {
     let res = await this.$axios.post('/incident/create', data)
     return res;
   },
+  async getMyReports() {
+    let res = await this.$axios.get('/user/incidents')
+    return res;
+  },
   logOut() {
     this.$auth.logout();
   }

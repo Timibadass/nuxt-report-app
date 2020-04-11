@@ -1,6 +1,6 @@
 <template>
-  <section class="home">
-    <h1 class="home__heading">Welcome to your Report App!</h1>
+  <section class="incidents">
+    <h1 class="home__heading">My Reports</h1>
     <incident-card :incidents="incidents" @deleteIncident="deleteIncident"></incident-card>
   </section>
 </template>
@@ -8,28 +8,26 @@
 <script>
 import incidentCard from "@/components/incidentCard.vue";
 export default {
-  name: "landing-page",
+  name: "my-reports",
   data() {
     return {
-      incidents: ""
+      incidents: []
     };
   },
   components: {
     incidentCard
   },
-  async asyncData({ $axios }) {
-    let { data } = await $axios.get("/incidents");
-    return { incidents: data.data.incidents };
-    // OR
-    // return $axios.get("/incidents")
-    // .then(resp => {
-    //   return { incidents: resp.data.data.incidents };
-    // });
+  mounted() {
+    this.getMyReports();
   },
   methods: {
-    async getIncidents() {
-      let res = await this.$store.dispatch("getIncidents");
-      this.incidents = res.data.data.incidents;
+    async getMyReports() {
+      try {
+        let res = await this.$store.dispatch("getMyReports");
+        this.incidents = res.data.data;
+      } catch (error) {
+        console.error(error);
+      }
     },
     async deleteIncident(incident) {
       let data = {
@@ -43,7 +41,7 @@ export default {
           title: "Success",
           text: "Incident successfully deleted!"
         });
-        this.getIncidents();
+        this.getMyReports();
       } catch (error) {
         this.$notify({
           group: "error",
@@ -58,4 +56,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>

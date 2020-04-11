@@ -234,7 +234,7 @@ a {
 .loading__indicator {
   text-align: center;
   animation-name: blink;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -242,4 +242,8 @@ a {
 .report__heading {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.empty__report {
+  margin: 30px auto;
 }

@@ -12,6 +12,9 @@
         <button class="nav__link nav__link--long">
           <nuxt-link to="/report-incident">Report incident</nuxt-link>
         </button>
+        <button class="nav__link nav__link--long">
+          <nuxt-link to="/my-reports">My Reports</nuxt-link>
+        </button>
         <button class="nav__link" @click.prevent="logOut">Log out</button>
       </div>
       <button class="nav__link" v-if="!auth.loggedIn">
