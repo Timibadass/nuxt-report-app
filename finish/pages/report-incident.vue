@@ -37,6 +37,7 @@
         ></textarea>
       </div>
       <input type="submit" value="Report" class="input__button" @click.prevent="reportIncident" />
+      <p class="loading__indicator" v-if="loading">Please wait....</p>
     </form>
   </section>
 </template>
@@ -44,8 +45,10 @@
 <script>
 export default {
   name: "report-incident",
+  middleware: "auth",
   data() {
     return {
+      loading: false,
       incident: {
         type: "red-flag",
         title: "",
@@ -63,6 +66,7 @@ export default {
       formData.append("type", data.type);
       formData.append("location", data.location);
       formData.append("comment", data.comment);
+      this.loading = true;
 
       try {
         let res = await this.$store.dispatch("reportIncident", formData);
@@ -71,8 +75,10 @@ export default {
           title: "Success",
           text: "Incident reported successfully!"
         });
-        this.$router.push("/");
+        this.loading = false;
+        this.$router.push("/my-reports");
       } catch (error) {
+        this.loading = false;
         this.$notify({
           group: "error",
           title: "Error!",

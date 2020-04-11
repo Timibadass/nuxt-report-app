@@ -9,6 +9,7 @@
 import incidentCard from "@/components/incidentCard.vue";
 export default {
   name: "my-reports",
+  middleware: "auth",
   data() {
     return {
       incidents: []
