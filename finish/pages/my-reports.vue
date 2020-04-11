@@ -18,8 +18,9 @@ export default {
   components: {
     incidentCard
   },
-  mounted() {
-    this.getMyReports();
+  async fetch() {
+    let { data } = await this.$axios.get("/user/incidents");
+    this.incidents = data.data;
   },
   methods: {
     async getMyReports() {
