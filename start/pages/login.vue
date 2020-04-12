@@ -1,29 +1,9 @@
 <template>
-  <section class="register">
-    <form class="register__form">
-      <div class="input__container">
-        <label for="firstName" class="input__label">First Name</label>
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          class="input__field"
-          v-model="register.firstName"
-        />
-      </div>
-      <div class="input__container">
-        <label for="lastName" class="input__label">Last Name</label>
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          class="input__field"
-          v-model="register.lastName"
-        />
-      </div>
+  <section class="login">
+    <form class="login__form" @submit.prevent="logIn">
       <div class="input__container">
         <label for="email" class="input__label">Email Address</label>
-        <input type="email" name="email" id="email" class="input__field" v-model="register.email" />
+        <input type="email" name="email" id="email" class="input__field" v-model="login.email" />
       </div>
       <div class="input__container input__container--relative">
         <label for="password" class="input__label">Password</label>
@@ -32,7 +12,7 @@
           name="password"
           id="password"
           class="input__field"
-          v-model="register.password"
+          v-model="login.password"
         />
         <button class="visibility__button">
           <font-awesome-icon
@@ -43,7 +23,7 @@
           <font-awesome-icon @click.prevent="visibility = true" v-else :icon="['far', 'eye']" />
         </button>
       </div>
-      <input class="input__button" type="submit" value="Register" @click.prevent="registerUser" />
+      <input class="input__button" type="submit" value="login" @click.prevent="logIn" />
       <p class="loading__indicator" v-if="loading">Please wait....</p>
     </form>
   </section>
@@ -51,21 +31,19 @@
 
 <script>
 export default {
-  name: "register",
+  name: "login",
   data() {
     return {
       loading: false,
       visibility: false,
-      register: {
-        firstName: "",
-        lastName: "",
+      login: {
         email: "",
         password: ""
       }
     };
   },
   methods: {
-    async registerUser() {}
+    async logIn() {}
   }
 };
 </script>

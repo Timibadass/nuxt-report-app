@@ -6,7 +6,7 @@ a {
 
 .header {
   width: 100%;
-  max-width: 500px;
+  /* max-width: 500px; */
   margin-left: auto;
   margin-right: auto;
   height: 60px;
@@ -31,23 +31,36 @@ a {
 }
 
 .nav {
-  width: 60%;
+  width: 95%;
   height: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-right: 10px;
-  max-width: 300px;
+  max-width: 460px;
+}
+
+.nav__user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .nav__link {
   width: 80px;
   display: flex;
+  margin: 0 10px;
   align-items: center;
   border-radius: 4px;
   justify-content: center;
+  background-color: transparent;
   height: 100%;
   border: 1px solid #00c58e;
   cursor: pointer;
+}
+
+.nav__link--long {
+  width: 120px;
 }
 
 .nav__link:active {
@@ -55,4 +68,194 @@ a {
   border: 1px solid #00c58e;
   color: #fff;
   box-shadow: 5px 3px 5px 2px #3f41468c;
+}
+
+.vue-notification {
+  padding: 10px;
+  margin: 0 5px 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  z-index: 10;
+  font-size: 12px;
+  color: #ffffff;
+  background: #44a4fc;
+  border-left: 5px solid #187fe7;
+}
+
+.warn {
+  background: #ffb648;
+  border-left-color: #f48a06;
+}
+
+.error {
+  background: #e54d42;
+  border-left-color: #b82e24;
+}
+
+.success {
+  background: #68cd86;
+  border-left-color: #42a85f;
+}
+
+.home__heading {
+  text-align: center;
+}
+
+.incidents__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.incident {
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 1px 4px 4px 2px #666;
+  border-radius: 4px;
+  margin: 10px 0;
+  border: 1px solid #00c58e;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .incident {
+    margin: 10px;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.incident__image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.incident p {
+  padding: 0 5px;
+  margin-bottom: 5px;
+}
+
+.paragraph__title {
+  font-weight: bold;
+}
+
+.incident__button {
+  border-radius: 4px;
+  border: 1px solid #e54d42;
+  display: block;
+  width: 60px;
+  cursor: pointer;
+  margin: 10px auto;
+  color: #fff;
+  background-color: #e54d42;
+  height: 35px;
+  text-transform: capitalize;
+}
+
+.register__form,
+.login__form,
+.report__form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input__container {
+  width: calc(100% - 10px);
+  padding: 0 5px;
+  margin: 10px 0;
+  max-width: 400px;
+}
+
+.input__container--relative {
+  position: relative;
+}
+
+.input__label {
+  display: block;
+  width: 100%;
+}
+
+.input__field {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  padding-left: 10px;
+  border: 1px solid #00c58e;
+  box-sizing: border-box;
+}
+
+.input__area {
+  width: 100%;
+  height: 100px;
+  border-radius: 4px;
+  padding-left: 10px;
+  border: 1px solid #00c58e;
+  box-sizing: border-box;
+}
+
+.visibility__button {
+  position: absolute;
+  right: 10px;
+  top: 26px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  height: 30px;
+  width: 30px;
+  outline: 0;
+}
+
+.input__button {
+  border: 1px solid #00c58e;
+  background-color: #00c58e;
+  color: #fff;
+  height: 40px;
+  width: 200px;
+  border-radius: 4px;
+  display: block;
+  margin: 20px auto;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loading__indicator {
+  text-align: center;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.report__heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.empty__report {
+  margin: 30px auto;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.empty__report > h5 {
+  margin-bottom: 20px;
+}
+
+.empty__report > .nav__link {
+  height: 45px;
 }

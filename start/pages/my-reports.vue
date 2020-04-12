@@ -1,6 +1,6 @@
 <template>
-  <section class="home">
-    <h1 class="home__heading">Welcome to your Report App!</h1>
+  <section class="incidents">
+    <h1 class="home__heading">My Reports</h1>
     <incident-card :incidents="incidents"></incident-card>
   </section>
 </template>
@@ -8,7 +8,7 @@
 <script>
 import incidentCard from "@/components/incidentCard.vue";
 export default {
-  name: "landing-page",
+  name: "my-reports",
   data() {
     return {
       incidents: []
@@ -21,4 +21,5 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
