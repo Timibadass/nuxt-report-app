@@ -246,4 +246,16 @@ a {
 
 .empty__report {
   margin: 30px auto;
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.empty__report > h5 {
+  margin-bottom: 20px;
+}
+
+.empty__report > .nav__link {
+  height: 45px;
 }

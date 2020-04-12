@@ -70,9 +70,6 @@ export default {
       let data = this.register;
       try {
         await this.$axios.post("/user/create", data);
-        // this.$auth.loginWith("local", {
-        //   data: this.register
-        // });
         this.$router.push("/login");
         this.loading = false;
         this.$notify({

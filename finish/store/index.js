@@ -8,7 +8,7 @@ export const mutations = {}
 
 export const actions = {
   async getIncidents() {
-    let res = this.$axios.get('/incidents')
+    let res = await this.$axios.get('/incidents')
     return res;
   },
   async deleteIncident({}, data) {

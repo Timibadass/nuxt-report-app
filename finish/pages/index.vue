@@ -20,11 +20,6 @@ export default {
   async asyncData({ $axios }) {
     let { data } = await $axios.get("/incidents");
     return { incidents: data.data.incidents };
-    // OR
-    // return $axios.get("/incidents")
-    // .then(resp => {
-    //   return { incidents: resp.data.data.incidents };
-    // });
   },
   methods: {
     async getIncidents() {

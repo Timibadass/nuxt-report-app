@@ -3,7 +3,11 @@
     <div class="incidents__container" v-if="incidents.length > 0">
       <div class="incident" v-for="incident in incidents" :key="incident.id">
         <div class="image">
-          <img src="../assets/Images/placeholder.png" class="incident__image" :alt="incident.title" />
+          <img
+            src="../assets/Images/placeholder.png"
+            class="incident__image"
+            :alt="incident.title"
+          />
         </div>
         <p>
           <span class="paragraph__title">Title</span>
@@ -23,22 +27,24 @@
         </p>
         <p>
           <span class="paragraph__title">Comment</span>
-          : {{ incident.comment !== 'undefined' ? incident.comment : 'n/a' }}
+          : {{ incident.comment !== "undefined" ? incident.comment : "n/a" }}
         </p>
         <button
           class="incident__button"
           v-if="auth.loggedIn && auth.user.id === incident.createdBy"
           @click.prevent="emitEvent(incident)"
-        >delete</button>
+        >
+          delete
+        </button>
       </div>
     </div>
     <div class="incidents__container" v-else>
-      <h5 class="empty__report">
-        You have no reports yet
+      <div class="empty__report">
+        <h5>You have no reports yet</h5>
         <button class="nav__link nav__link--long">
           <nuxt-link to="/report-incident">Report incident</nuxt-link>
         </button>
-      </h5>
+      </div>
     </div>
   </div>
 </template>
@@ -61,5 +67,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
